@@ -113,7 +113,7 @@ namespace EditorTexto
 
         private void localizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           /* string termo = InputBox("Digite o texto a localizar:", "Localizar");
+            string termo = InputBox("Digite o texto a localizar:", "Localizar");
             if (!string.IsNullOrEmpty(termo))
             {
                 int posicao = richTextBox1.Text.IndexOf(termo, StringComparison.CurrentCultureIgnoreCase);
@@ -126,7 +126,7 @@ namespace EditorTexto
                 {
                     MessageBox.Show("Texto não encontrado.");
                 }
-            }*/
+            }
         }
 
         private void fonteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -203,6 +203,94 @@ namespace EditorTexto
 
             // Se ainda houver linhas, imprime mais páginas
             e.HasMorePages = (linha != null);
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // Ctrl + N: Novo documento
+            if (keyData == (Keys.Control | Keys.N))
+            {
+                novoToolStripMenuItem_Click(this, EventArgs.Empty);
+                return true;
+            }
+            // Ctrl + S: Salvar
+            if (keyData == (Keys.Control | Keys.S))
+            {
+                salvarToolStripMenuItem_Click(this, EventArgs.Empty);
+                return true;
+            }
+            // Ctrl + O: Abrir
+            if (keyData == (Keys.Control | Keys.O))
+            {
+                abrirToolStripMenuItem_Click(this, EventArgs.Empty);
+                return true;
+            }
+            // Ctrl + B: Negrito
+            if (keyData == (Keys.Control | Keys.B))
+            {
+                ToggleBold();
+                return true;
+            }
+            // Ctrl + I: Itálico
+            if (keyData == (Keys.Control | Keys.I))
+            {
+                ToggleItalic();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        // Toggle bold formatting for selected text
+        private void ToggleBold()
+        {
+            if (richTextBox1.SelectionFont != null)
+            {
+                Font currentFont = richTextBox1.SelectionFont;
+                FontStyle newFontStyle = currentFont.Style ^ FontStyle.Bold;
+                richTextBox1.SelectionFont = new Font(currentFont, newFontStyle);
+            }
+        }
+
+        // Toggle italic formatting for selected text
+        private void ToggleItalic()
+        {
+            if (richTextBox1.SelectionFont != null)
+            {
+                Font currentFont = richTextBox1.SelectionFont;
+                FontStyle newFontStyle = currentFont.Style ^ FontStyle.Italic;
+                richTextBox1.SelectionFont = new Font(currentFont, newFontStyle);
+            }
+        }
+
+        // Add this method to provide an implementation for the missing InputBox functionality.
+        private string InputBox(string prompt, string title)
+        {
+            Form inputBox = new Form();
+            inputBox.Width = 400;
+            inputBox.Height = 200;
+            inputBox.Text = title;
+
+            Label label = new Label() { Left = 20, Top = 20, Text = prompt, Width = 350 };
+            TextBox textBox = new TextBox() { Left = 20, Top = 50, Width = 350 };
+            Button okButton = new Button() { Text = "OK", Left = 250, Width = 100, Top = 100, DialogResult = DialogResult.OK };
+            Button cancelButton = new Button() { Text = "Cancel", Left = 140, Width = 100, Top = 100, DialogResult = DialogResult.Cancel };
+
+            okButton.Click += (sender, e) => { inputBox.Close(); };
+            cancelButton.Click += (sender, e) => { inputBox.Close(); };
+
+            inputBox.Controls.Add(label);
+            inputBox.Controls.Add(textBox);
+            inputBox.Controls.Add(okButton);
+            inputBox.Controls.Add(cancelButton);
+            inputBox.AcceptButton = okButton;
+            inputBox.CancelButton = cancelButton;
+
+            DialogResult result = inputBox.ShowDialog();
+            return result == DialogResult.OK ? textBox.Text : string.Empty;
+        }
+
+        private void selecionarTdoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectAll();
         }
     }
 }

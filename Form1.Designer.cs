@@ -60,7 +60,6 @@
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.selecionarOTextoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,8 +165,6 @@
             // 
             // localizarToolStripMenuItem
             // 
-            this.localizarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.selecionarOTextoToolStripMenuItem});
             this.localizarToolStripMenuItem.Name = "localizarToolStripMenuItem";
             this.localizarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.localizarToolStripMenuItem.Text = "Localizar";
@@ -177,7 +174,8 @@
             // 
             this.selecionarTdoToolStripMenuItem.Name = "selecionarTdoToolStripMenuItem";
             this.selecionarTdoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.selecionarTdoToolStripMenuItem.Text = "Selecionar Tdo";
+            this.selecionarTdoToolStripMenuItem.Text = "Selecionar Tudo";
+            this.selecionarTdoToolStripMenuItem.Click += new System.EventHandler(this.selecionarTdoToolStripMenuItem_Click);
             // 
             // formatarToolStripMenuItem
             // 
@@ -267,12 +265,6 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // selecionarOTextoToolStripMenuItem
-            // 
-            this.selecionarOTextoToolStripMenuItem.Name = "selecionarOTextoToolStripMenuItem";
-            this.selecionarOTextoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.selecionarOTextoToolStripMenuItem.Text = "Selecionar o texto";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -324,7 +316,6 @@
         private System.Windows.Forms.ToolStripMenuItem centralizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem esquerdaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem direitaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem selecionarOTextoToolStripMenuItem;
     }
 }
 
