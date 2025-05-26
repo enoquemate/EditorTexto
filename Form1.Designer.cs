@@ -145,35 +145,35 @@
             // copiarToolStripMenuItem
             // 
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
             this.copiarToolStripMenuItem.Text = "Copiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
             // recortarToolStripMenuItem
             // 
             this.recortarToolStripMenuItem.Name = "recortarToolStripMenuItem";
-            this.recortarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.recortarToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
             this.recortarToolStripMenuItem.Text = "Recortar";
             this.recortarToolStripMenuItem.Click += new System.EventHandler(this.recortarToolStripMenuItem_Click);
             // 
             // colarToolStripMenuItem
             // 
             this.colarToolStripMenuItem.Name = "colarToolStripMenuItem";
-            this.colarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.colarToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
             this.colarToolStripMenuItem.Text = "Colar";
             this.colarToolStripMenuItem.Click += new System.EventHandler(this.colarToolStripMenuItem_Click);
             // 
             // localizarToolStripMenuItem
             // 
             this.localizarToolStripMenuItem.Name = "localizarToolStripMenuItem";
-            this.localizarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.localizarToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
             this.localizarToolStripMenuItem.Text = "Localizar";
             this.localizarToolStripMenuItem.Click += new System.EventHandler(this.localizarToolStripMenuItem_Click);
             // 
             // selecionarTdoToolStripMenuItem
             // 
             this.selecionarTdoToolStripMenuItem.Name = "selecionarTdoToolStripMenuItem";
-            this.selecionarTdoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.selecionarTdoToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
             this.selecionarTdoToolStripMenuItem.Text = "Selecionar Tudo";
             this.selecionarTdoToolStripMenuItem.Click += new System.EventHandler(this.selecionarTdoToolStripMenuItem_Click);
             // 
@@ -272,11 +272,12 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editor de Tesxto";
+            this.Text = "Editor de Texto";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
